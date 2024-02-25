@@ -13,18 +13,39 @@ interface Employee {
 
 export default function Home() {
   const [employees, setEmployees] = useState<Employee[]>([])
+  const [query, setQuery] = useState<string>("")
 
   useEffect(() => {
     const fetchEmployees = async () => {
-      const response = await fetch("http://localhost:3000/employees")
+      const apiUrl = `${import.meta.env.VITE_API_BASE_URL}/employees`
+      const response = await fetch(apiUrl)
       const employees: Employee[] = await response.json()
 
       setEmployees(employees)
-      console.log(employees)
     }
 
     fetchEmployees()
+
+    return () => setEmployees([])
   }, [])
+
+  const handleQuery = (input: string): void => {
+    setQuery(input)
+  }
+
+  const queriedEmployees = (employees: Employee[]): Employee[] => {
+    if (query.length === 0) return employees
+
+    const cleanQuery = query.replace(/[^a-zA-Z0-9 ]/g, '')
+
+    const filteredArray = employees.filter(employee => (
+      employee.job.toLowerCase().includes(cleanQuery.toLowerCase()) ||
+      employee.name.toLowerCase().includes(cleanQuery.toLowerCase()) ||
+      employee.phone.toLowerCase().includes(cleanQuery.toLowerCase())
+    ))
+
+    return filteredArray
+  }
 
   return (
     <>
@@ -32,12 +53,12 @@ export default function Home() {
     <Wrapper>
       <section className="top-section">
         <h1>Funcionários</h1>
-        <SearchBar />
+        <SearchBar query={query} handleQuery={handleQuery}/>
       </section>
       <table className="table-wrapper">
         <TableHeader />
         <tbody>
-          {employees.map(employee => (
+          {queriedEmployees(employees).map(employee => (
             <TableRow 
               key={employee.id}
               name={employee.name}

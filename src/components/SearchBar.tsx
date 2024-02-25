@@ -1,13 +1,20 @@
-import { useState } from "react"
 import styled from "styled-components"
 import Search from "../assets/search.svg"
 
-export function SearchBar() {
-  const [query, setQuery] = useState<string>("")
+interface SearchBarProps {
+  query: string
+  handleQuery: (query: string) => void
+}
 
+export function SearchBar(props: SearchBarProps) {
   return (
     <Wrapper>
-      <input placeholder={"Pesquisar"} type="text" value={query} onChange={e => setQuery(e.target.value)} />
+      <input 
+        placeholder={"Pesquisar"} 
+        type="text" 
+        value={props.query} 
+        onChange={e => props.handleQuery(e.target.value)} 
+      />
       <img src={Search} alt="search" />
     </Wrapper>
   )
