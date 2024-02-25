@@ -9,14 +9,6 @@
 
 <br />
 <div align="center">
-
-  <!-- PROJECT LOGO -->
-  <!--
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-  -->
-
   <h1>Desafio Frontend BE</h1>
 </div>
 
@@ -29,52 +21,54 @@
 [![EsLint][EsLint-badge]][EsLint-url]&nbsp;
 [![Styled-components][Styled-components-badge]][Styled-components-url]&nbsp;
 
-<!-- LATER: [![MongoDB][MongoDB-badge]][MongoDB-url]&nbsp; -->
-
 <br />
 
 <!-- ABOUT -->
 
-## About The Project
+## Sobre o Projeto
 
-Being a developer, wannabe story writer and a gamer I thought to myself:
-
-"Why not make my own game? Might as well make my own game engine from scratch while I'm at it!"
-
-This project is that idea being brought to life, a **Visual Novel RPG**. Will probably take a while to be finished but it's been a joy of a project so far!
+Este é um Desafio técnico para Front-End que consistiu na construção de uma tabela de funcionários a partir de dados servidos por uma API simulada em json-server. Este projeto inclui layout responsivo para Desktop e Mobile e um mecânismo de pesquisa e filtragem da tabela por cargo, nome e telefone do funcionário.
 
 <br />
 
 <!-- GETTING STARTED -->
 
-## Getting Started
+## Como Inicializar o App
 
-1. Clone repository
+1. Clone este repositório
 
 ```bash
-git clone git@github.com:pauloserrano/nextjs-game.git
+> git clone git@github.com:pauloserrano/desafio-frontend-be.git
 ```
 
-2. Install dependencies
+2. Instale as dependências
 
 ```bash
-npm i
+> npm i
 ```
 
-3. Start the game!
+3. Inicialize a API
 
 ```bash
-npm run start
+> npx json-server db.json
+```
+
+> A rota padrão da API é **localhost:3000** no arquivo .env, **se estiver utilizando outra porta altere o arquivo .env**
+
+4. Rode o app
+
+```bash
+> npm run dev
 ```
 
 <br />
 
 <!-- CONTACT -->
 
-## Contact Me
+## Meus Contatos
 
-Email: [pvsserrano@gmail.com](mailto:pvsserrano@gmail.com)  
-Linkedin: [Paulo Serrano](https://www.linkedin.com/in/pvsserrano/)
+**Email:** [pvsserrano@gmail.com](mailto:pvsserrano@gmail.com)  
+**Linkedin:** [Paulo Serrano](https://www.linkedin.com/in/pvsserrano/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
