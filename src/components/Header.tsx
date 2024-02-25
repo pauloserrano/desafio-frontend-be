@@ -1,7 +1,7 @@
 import BeLogo from "../assets/be-logo.svg"
 import styled from "styled-components"
 
-export default function Header() {
+export function Header() {
   return (
     <Wrapper>
       <img src={BeLogo} alt="logo" />

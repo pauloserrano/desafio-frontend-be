@@ -1,7 +1,7 @@
 import Home from '../pages/Home'
 import GlobalStyle from '../main.styles'
 
-export default function App() {
+export function App() {
   return (
     <>
       <GlobalStyle />
