@@ -1,4 +1,4 @@
-import BeLogo from "../assets/be-logo.svg"
+import BeLogo from "/be-logo.svg"
 import styled from "styled-components"
 
 export function Header() {

@@ -15,17 +15,25 @@ export function TableHeader() {
 }
 
 const Wrapper = styled.thead`
-  tr {
-    height: 60px;
-    padding-inline: 2rem;
-    color: #fff;
-    background: linear-gradient(to bottom, #5A84C0, #594ED2);
-  }
-
+  height: 60px;
+  
   th {
     height: 100%;
-    padding-inline: 2rem;
     vertical-align: middle;
     text-align: left;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+    background: linear-gradient(to bottom, #5A84C0, #594ED2);
+
+    &:first-of-type {
+      padding-left: 2rem;
+      border-radius: 0.5rem 0 0 0;
+    }
+
+    &:last-of-type {
+      padding-right: 2rem;
+      border-radius: 0 0.5rem 0 0;
+    }
   }
 `

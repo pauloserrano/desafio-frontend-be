@@ -61,6 +61,7 @@ const Wrapper = styled.section`
   .top-section {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     margin-bottom: 2rem;
 
@@ -72,6 +73,20 @@ const Wrapper = styled.section`
 
   .table-wrapper {
     width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 1px;
+
+    thead th, tbody td {
+      min-width: 10%;
+
+      &:first-of-type {
+        padding-left: 2rem;
+      }
+
+      &:last-of-type {
+        padding-right: 2rem;  
+      }
+    }
 
     > * {
       padding-inline: 2rem;

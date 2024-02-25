@@ -66,6 +66,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     min-height: 100vh;
     font-family: "Roboto", sans-serif;
+    background-color: #F0F0F0;
   }
 `
 
