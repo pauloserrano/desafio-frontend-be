@@ -34,6 +34,8 @@ const Wrapper = styled.form`
     flex: 1;
     height: 100%;
     border: none;
+    font-size: 1rem;
+    font-weight: 400;
     font-family: inherit;
     background-color: transparent;
 

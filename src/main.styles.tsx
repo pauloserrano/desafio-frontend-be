@@ -62,7 +62,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
+  body, #root {
     width: 100%;
     min-height: 100vh;
     font-family: "Roboto", sans-serif;

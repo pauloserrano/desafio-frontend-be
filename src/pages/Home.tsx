@@ -55,21 +55,20 @@ export default function Home() {
         <h1>Funcionários</h1>
         <SearchBar query={query} handleQuery={handleQuery}/>
       </section>
-      <table className="table-wrapper">
+
+      <section className="table-wrapper">
         <TableHeader />
-        <tbody>
-          {queriedEmployees(employees).map(employee => (
-            <TableRow 
-              key={employee.id}
-              name={employee.name}
-              imageSrc={employee.image}
-              admissionDate={employee.admission_date}
-              job={employee.job}
-              phone={employee.phone}
-            />
-          ))}
-        </tbody>
-      </table>
+        {queriedEmployees(employees).map(employee => (
+          <TableRow 
+            key={employee.id}
+            name={employee.name}
+            imageSrc={employee.image}
+            admissionDate={employee.admission_date}
+            job={employee.job}
+            phone={employee.phone}
+          />
+        ))}
+      </section>
     </Wrapper>
     </>
   )
@@ -94,23 +93,48 @@ const Wrapper = styled.section`
 
   .table-wrapper {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 1px;
 
-    thead th, tbody td {
-      min-width: 10%;
+    .table-headers, .table-row {
+      display: grid;
+      width: 100%;
+      position: relative;
 
-      &:first-of-type {
-        padding-left: 2rem;
+      &.desktop {
+        grid-template-columns: 15% 20% 20% 25% 20%;
       }
 
-      &:last-of-type {
-        padding-right: 2rem;  
+      &.mobile {
+        display: none;
+        justify-items: center;
+        grid-template-columns: 15% 1fr 15%;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .top-section {
+      h1 {
+        display: none;
+      }
+
+      form {
+        width: 100%;
       }
     }
 
-    > * {
-      padding-inline: 2rem;
+    .table-row li {
+      height: 60px;
+      padding: 0.75rem 1rem;
+    }
+
+    .table-wrapper .table-headers.desktop,
+    .table-wrapper .table-row.desktop {
+      display: none;
+    }
+
+    .table-wrapper .table-headers.mobile,
+    .table-wrapper .table-row.mobile {
+      display: grid;
     }
   }
 `
