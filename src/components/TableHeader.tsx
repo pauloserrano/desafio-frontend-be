@@ -14,7 +14,7 @@ export function TableHeader() {
       <Wrapper className="table-headers mobile">
         <li>FOTO</li>
         <li>NOME</li>
-        <li>*</li>
+        <li className="dot-icon"></li>
       </Wrapper>
     </>
   )
@@ -32,5 +32,16 @@ const Wrapper = styled.ul`
     height: 100%;
     font-weight: 500;
     color: #fff;
+    position: relative;
+
+    &.dot-icon:after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-color: #fff;
+      border-radius: 100%;
+      position: relative;
+      left: 3px;
+    }
   }
 `

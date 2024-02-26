@@ -31,6 +31,18 @@ Este é um Desafio técnico para Front-End que consistiu na construção de uma 
 
 <br />
 
+<!-- REQUIREMENTS -->
+
+## Pré-requisitos
+
+As seguintes tecnologias foram utilizadas para elaboração do projeto e se fazem necessárias para seu funcionamento:
+
+- npm
+- node
+- git
+
+<br />
+
 <!-- GETTING STARTED -->
 
 ## Como Inicializar o App
@@ -60,6 +72,8 @@ Este é um Desafio técnico para Front-End que consistiu na construção de uma 
 ```bash
 > npm run dev
 ```
+
+5. Acesse o app em http://localhost:5173/
 
 <br />
 
